@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bloom with Simaran — The Aligned Women</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Great+Vibes&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#221C1A;
@@ -51,22 +51,19 @@
 
   /* ---------- NAV ---------- */
   header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(251,246,240,0.9);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
+    position:relative;z-index:50;
+    background:#FBF6F0;
   }
   nav{
     display:flex;align-items:center;justify-content:space-between;
-    padding:20px 32px;max-width:var(--max);margin:0 auto;
+    padding:10px 24px;max-width:var(--max);margin:0 auto;
   }
   .logo{
-    font-family:'Fraunces', serif;
-    font-size:22px;font-weight:600;
-    display:flex;align-items:baseline;gap:6px;
-  }
-  .logo span{
-    color:var(--marigold);font-style:italic;font-weight:500;
+    font-family:'Great Vibes', cursive;
+    font-size:42px;font-weight:400;
+    color:var(--plum-deep);
+    text-decoration:none;
+    display:inline-flex;align-items:center;
   }
   .nav-links{
     display:flex;gap:36px;font-size:14px;letter-spacing:0.02em;
@@ -112,8 +109,10 @@
     position:relative;
     display:grid;
     grid-template-columns:1.1fr 0.9fr;
-    align-items:stretch;
-    min-height:88vh;
+    align-items:center;
+    min-height:70vh;
+    max-width:var(--max);
+    margin:0 auto;
     overflow:hidden;
   }
   .hero-text{
@@ -151,24 +150,50 @@
   .btn-ghost:hover{background:var(--plum);color:var(--cream);}
 
   .hero-media{
+    background:var(--cream);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:40px 20px;
     position:relative;
-    background:var(--plum);
     overflow:hidden;
   }
   .hero-media img{
     width:100%;height:100%;object-fit:cover;opacity:0.92;
   }
-  .hero-media::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(0deg, rgba(34,28,26,0.55), transparent 45%);
-  }
   .hero-quote{
-    position:absolute;left:28px;right:28px;bottom:28px;color:var(--cream);z-index:2;
+    position:relative;
+    width:100%; max-width:540px;
+    margin: 15px auto 0;
+    text-align:center;
+    padding: 0 20px 20px;
   }
   .hero-quote p.display{
-    font-size:19px;font-style:italic;margin-bottom:6px;
+    font-size:32px;
+    font-style:italic;
+    font-weight:400;
+    margin-bottom:24px;
+    line-height:1.3;
+    color:var(--plum-deep);
   }
-  .hero-quote span{font-size:12px;letter-spacing:0.06em;opacity:0.85;}
+  .hero-quote p.display span.quote-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    color: var(--marigold);
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin: 0 6px;
+    opacity: 0.8;
+  }
+  .hero-quote span.author{
+    font-family:'Fraunces', serif;
+    font-size:14px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    font-weight:500;
+    color:var(--marigold);
+    display: inline-block;
+    padding-top: 16px;
+    border-top: 1px solid rgba(200,151,89, 0.3);
+  }
 
   /* ---------- MISSION STRIP ---------- */
   .strip{
@@ -226,9 +251,9 @@
     border-radius:8px;overflow:hidden;
   }
   .program-card{
-    background:var(--cream);padding:36px 28px;transition:background .25s ease;
+    background:var(--blush);padding:36px 28px;transition:background .25s ease;
   }
-  .program-card:hover{background:var(--blush);}
+  .program-card:hover{background:var(--cream);}
   .program-card .pnum{
     font-family:'Fraunces',serif;font-style:italic;color:var(--marigold);font-size:15px;
   }
@@ -321,7 +346,13 @@
   .foot-grid{
     display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:50px;
   }
-  .foot-logo{font-family:'Fraunces',serif;font-size:22px;color:var(--cream);margin-bottom:14px;}
+  .foot-logo{
+    font-family:'Great Vibes', cursive;
+    font-size:42px;font-weight:400;
+    color:var(--cream);
+    margin-bottom:14px;
+    display:inline-flex;align-items:center;
+  }
   .foot-grid p{font-size:14px;line-height:1.7;color:#A1938C;max-width:280px;}
   .foot-col h4{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);margin-bottom:18px;}
   .foot-col a{display:block;font-size:14px;color:#A1938C;margin-bottom:12px;transition:color .2s ease;}
@@ -343,10 +374,11 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
+    .logo, .foot-logo { font-size: 24px; white-space: nowrap !important; }
     .nav-links, .nav-cta{display:none;}
     .menu-toggle{display:block;}
     .hero{grid-template-columns:1fr;min-height:auto;}
-    .hero-media{height:340px;order:-1;}
+    .hero-media{height:auto;order:-1; padding:20px 20px 0;}
     .hero-text{padding:48px 24px;}
     .strip .wrap{grid-template-columns:1fr;gap:24px;}
     .about{grid-template-columns:1fr;gap:40px;}
@@ -369,16 +401,103 @@
     .strip-item{flex-direction:column; gap:8px; padding-right:0;}
     .strip-item .num{margin-bottom:0;}
     
-    .programs-grid{grid-template-columns:1fr;}
+    .programs-grid{grid-template-columns:repeat(2, 1fr);}
+    .program-card{padding: 24px 16px;}
+    .program-card h3{font-size: 16px; margin: 12px 0 8px;}
+    .program-card p{font-size: 13px;}
     .journey-path{grid-template-columns:1fr; row-gap:32px;}
     
-    .gallery-grid{grid-template-columns:1fr;}
-    .g-big{grid-column:span 1;grid-row:span 1;}
-    .gallery-grid a{height: 220px;} /* Give gallery images a fixed height on mobile */
+    .gallery-grid{grid-template-columns:1fr; grid-auto-rows:250px;}
+    .g-big, .g-wide, .g-tall{grid-column:span 1;grid-row:span 1;}
   }
 
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important;}
+  }
+
+  /* ---------- FLOATING ACTIONS ---------- */
+  .floating-actions {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+  }
+  .fab {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--plum);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    border: none;
+    transition: transform 0.25s ease, background 0.25s ease, opacity 0.3s ease;
+  }
+  .fab:hover {
+    transform: scale(1.1);
+    background: var(--marigold);
+  }
+  .fab svg {
+    width: 24px;
+    height: 24px;
+  }
+  .fab.whatsapp {
+    background: #25D366;
+  }
+  .fab.whatsapp:hover {
+    background: #20BA56;
+  }
+  #scrollToTop {
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .lightbox.active {
+    display: flex;
+    opacity: 1;
+  }
+  .lightbox-img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+  .lightbox-close:hover,
+  .lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
   }
 </style>
 </head>
@@ -387,7 +506,7 @@
 <header>
   <nav>
     <a href="#" class="logo">
-      <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785422131/logo_lujmvp.jpg" alt="Bloom with Simaran" style="max-height: 60px; width: auto; mix-blend-mode: multiply;">
+      Bloom with Simaran
     </a>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -411,19 +530,18 @@
 
 <section class="hero" style="padding:0;">
   <div class="hero-text">
-    <span class="eyebrow">Women Empowerment &amp; Emotional Support</span>
     <h1>Every story deserves<br>to be heard, every<br>woman deserves to <em>rise</em>.</h1>
-    <p>Uthaan stands beside women through hard seasons and bold beginnings — offering emotional support, skill-building, and a community that listens first.</p>
+    <p>Raise with Simran stands beside women through hard seasons and bold beginnings — offering emotional support, skill-building, and a community that listens first.</p>
     <div class="btn-row">
-      <a href="#contact" class="btn btn-primary">Reach Out for Support</a>
+      <a href="https://wa.me/917795853130?text=Hello%20Simran%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20support%20circles." target="_blank" class="btn btn-primary">Reach Out for Support</a>
       <a href="#programs" class="btn btn-ghost">See Our Programs</a>
     </div>
   </div>
  <div class="hero-media">
-    <img src="https://res.cloudinary.com/dqcxekzxn/image/upload/v1783654862/download_2_fdysec.jpg" alt="Hero Image">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785422131/logo_lujmvp.jpg" alt="Bloom with Simaran Logo" style="width: 100%; max-width: 400px; height: auto; object-fit: contain; mix-blend-mode: multiply; opacity: 1; margin-bottom: 0;">
     <div class="hero-quote">
-      <p class="display">"I didn't need to be fixed. I needed to be heard."</p>
-      <span>— Member, Uthaan Circle</span>
+      <p class="display"><span class="quote-mark">“</span>I didn't need to be fixed. I needed to be heard.<span class="quote-mark">”</span></p>
+      <span class="author">Member, Bloom with Simaran</span>
     </div>
   </div>
 </section>
@@ -483,13 +601,13 @@
       </div>
       <div class="program-card">
         <span class="pnum">03</span>
-        <h3>Mindset Transformation</h3>
-        <p>Replace self-doubt with confidence and positive habits.</p>
+        <h3>Mentorship</h3>
+        <p>One-on-one pairing with women who've walked the path before you.</p>
       </div>
       <div class="program-card">
         <span class="pnum">04</span>
-        <h3>Women’s Empowerment</h3>
-        <p>Discover your purpose, strength, and inner power.</p>
+        <h3>Community Events</h3>
+        <p>Meetups, workshops, and celebrations that keep the circle connected.</p>
       </div>
     </div>
   </div>
@@ -534,7 +652,7 @@
       <h2>From our circles and workshops</h2>
       <p>Photos and videos from recent sessions, training days, and community events.</p>
     </div>
-    <div class="gallery-grid">
+    <div class="gallery-grid" id="galleryGrid">
       <a href="#" class="g-big"><img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423086/d3409e1a-5c1b-4d12-a207-88151ee8f755_pk8lnd.jpg" alt="Gallery Image 1"></a>
       <a href="#" style="grid-column: span 2;"><img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423071/549d852c-3677-4e61-b27e-56fbc801115d_zwdjhb.jpg" alt="Gallery Image 2"></a>
       <a href="#"><img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423060/469f1b47-e8d9-4e82-a714-66dbb474f377_l7c9va.jpg" alt="Gallery Image 3"></a>
@@ -543,7 +661,7 @@
       <a href="#" style="grid-column: span 2;"><img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423025/11da99c7-c1e4-4bd7-8c6b-580e752aaef1_dbognq.jpg" alt="Gallery Image 6"></a>
     </div>
     <div class="gallery-cta">
-      <a href="#" class="btn btn-ghost">View Full Gallery</a>
+      <a href="gallery.html" class="btn btn-ghost">View Full Gallery</a>
     </div>
   </div>
 </section>
@@ -584,7 +702,7 @@
 <section class="cta-band" id="contact">
   <h2>You don't have to carry this alone. Reach out — we'll listen first.</h2>
   <div class="btn-row" style="justify-content:center;">
-    <a href="#" class="btn" style="background:var(--plum-deep);color:var(--cream);">Talk to Someone Today</a>
+    <a href="https://wa.me/917795853130?text=Hello%20Simran%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20support%20circles." target="_blank" class="btn" style="background:var(--plum-deep);color:var(--cream);">Talk to Someone Today</a>
     <a href="#programs" class="btn btn-ghost" style="border-color:var(--plum-deep);color:var(--plum-deep);">Explore Programs</a>
   </div>
 </section>
@@ -594,7 +712,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785422131/logo_lujmvp.jpg" alt="Bloom with Simaran" style="max-height: 50px; width: auto; margin-bottom: 14px;">
+          Bloom with Simaran
         </div>
         <p>A community offering emotional support and empowerment programs for women, one circle at a time.</p>
       </div>
@@ -607,9 +725,9 @@
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
-        <a href="mailto:hello@uthaan.org">hello@uthaan.org</a>
-        <a href="tel:+910000000000">+91 00000 00000</a>
-        <a href="#">Visakhapatnam, AP</a>
+        <a href="mailto:bloomwithsimran7@gmail.com">bloomwithsimran7@gmail.com</a>
+        <a href="tel:+919740740325">+91 97407 40325</a>
+        <a href="https://www.instagram.com/bloomwith.simran?igsh=bHB0aTI4Zmtjd3Y4" target="_blank">Instagram</a>
       </div>
       <div class="foot-col">
         <h4>Stay Connected</h4>
@@ -621,11 +739,22 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Uthaan. All rights reserved.</span>
-      <span>Demo website — built for pitch presentation</span>
+      <span>© 2026 Bloom with Simran. All rights reserved.</span>
     </div>
   </div>
 </footer>
+
+<div class="floating-actions">
+  <button id="scrollToTop" class="fab" aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNo2zLQAp3J3cWe4ZpiPnusA_ySx67piGoooa1cplKpQo-Jw/viewform" target="_blank" class="fab form-btn" aria-label="Fill Form" title="Fill out our form">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  </a>
+  <a href="https://wa.me/917795853130?text=Hello%20Simran%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20support%20circles." target="_blank" class="fab whatsapp" aria-label="WhatsApp" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
 
 <script>
   const menuToggle = document.getElementById('menuToggle');
@@ -644,6 +773,62 @@
       menuToggle.textContent = '☰';
     });
   });
+
+  const scrollBtn = document.getElementById('scrollToTop');
+  if(scrollBtn){
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        scrollBtn.style.opacity = '1';
+        scrollBtn.style.pointerEvents = 'auto';
+      } else {
+        scrollBtn.style.opacity = '0';
+        scrollBtn.style.pointerEvents = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Lightbox functionality
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.gallery-grid a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (!link.classList.contains('btn-ghost')) {
+        e.preventDefault();
+        const img = link.querySelector('img');
+        if (img) {
+          lightbox.style.display = 'flex';
+          void lightbox.offsetWidth; // Force reflow
+          lightbox.classList.add('active');
+          lightboxImg.src = img.src;
+        }
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) closeLightbox();
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    setTimeout(() => {
+      lightbox.style.display = 'none';
+    }, 300);
+  }
 </script>
 </body>
 </html>

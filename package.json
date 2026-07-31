@@ -1,0 +1,27 @@
+{
+  "name": "women-empowerment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yashvi-167/Bloom-with-Simaran.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yashvi-167/Bloom-with-Simaran/issues"
+  },
+  "homepage": "https://github.com/Yashvi-167/Bloom-with-Simaran#readme",
+  "description": "",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "cloudinary": "^2.10.0",
+    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
+    "multiparty": "^4.3.0"
+  }
+}

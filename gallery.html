@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Gallery - Raise with Simran</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Great+Vibes&family=Work+Sans:wght@300;400;500;600&display=swap');
+  
+  :root{
+    --ink:#221C1A;
+    --plum:#4A3F3A;
+    --plum-deep:#2E2724;
+    --marigold:#C89759;
+    --blush:#EFE8DE;
+    --cream:#F9F6F0;
+    --line:rgba(34,28,26,0.12);
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--cream);color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+  }
+  a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block;}
+  
+  header{
+    position:relative;z-index:50;
+    background:#FBF6F0;
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 24px;max-width:var(--max);margin:0 auto;
+  }
+  .logo{
+    font-family:'Great Vibes', cursive;
+    font-size:42px;font-weight:400;
+    color:var(--plum-deep);
+    text-decoration:none;
+    display:inline-flex;align-items:center;
+  }
+  .btn{
+    padding:11px 22px;border-radius:100px;font-size:14px;
+    background:var(--plum-deep);color:var(--cream);
+    transition: background 0.3s;
+  }
+  .btn:hover {
+    background: var(--marigold);
+    color: var(--plum-deep);
+  }
+  
+  .gallery-page-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+  }
+  .gallery-page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    color: var(--plum-deep);
+    margin-bottom: 10px;
+  }
+  
+  .full-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 0 24px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .full-gallery-grid img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .full-gallery-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .logo { font-size: 24px; white-space: nowrap !important; }
+    .btn { padding: 6px 12px; font-size: 12px; white-space: nowrap !important; }
+    .full-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    .full-gallery-grid img {
+      height: 300px;
+    }
+  }
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .lightbox.active {
+    display: flex;
+    opacity: 1;
+  }
+  .lightbox-img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+  .lightbox-close:hover,
+  .lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        Bloom with Simaran
+      </a>
+      <a href="index.html" class="btn">Back to Home</a>
+    </nav>
+  </header>
+
+  <div class="gallery-page-header">
+    <h1>Our Gallery</h1>
+    <p>Moments from our circles, workshops, and events.</p>
+  </div>
+
+  <div class="full-gallery-grid">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423086/d3409e1a-5c1b-4d12-a207-88151ee8f755_pk8lnd.jpg" alt="Gallery Image 1">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423071/549d852c-3677-4e61-b27e-56fbc801115d_zwdjhb.jpg" alt="Gallery Image 2">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423060/469f1b47-e8d9-4e82-a714-66dbb474f377_l7c9va.jpg" alt="Gallery Image 3">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423050/1dc99054-3ec4-426f-a7aa-d5fbdf95e28f_dzuafb.jpg" alt="Gallery Image 4">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423041/f9ead026-b10c-4a3e-b555-a2f2e44ac38f_ytdgxd.jpg" alt="Gallery Image 5">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423025/11da99c7-c1e4-4bd7-8c6b-580e752aaef1_dbognq.jpg" alt="Gallery Image 6">
+    <img src="https://res.cloudinary.com/dqcxekzxn/image/upload/v1783654862/download_2_fdysec.jpg" alt="Gallery Image 7">
+    <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785425471/e03c69b4-5b68-4a11-ba4f-7133e5a0638a_so2exy.jpg" alt="Gallery Image 8">
+  </div>
+  <div style="text-align:center; padding-bottom:60px;">
+    <a href="https://www.instagram.com/bloomwith.simran?igsh=bHB0aTI4Zmtjd3Y4" target="_blank" class="btn" style="background:var(--marigold);color:var(--plum-deep);border:none;">View more on Instagram</a>
+  </div>
+  
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+  </div>
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    if (lightbox) {
+      document.querySelectorAll('.full-gallery-grid img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+          lightbox.style.display = 'flex';
+          void lightbox.offsetWidth; // Force reflow
+          lightbox.classList.add('active');
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) closeLightbox();
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+        }, 300);
+      }
+    }
+  </script>
+</body>
+</html>
