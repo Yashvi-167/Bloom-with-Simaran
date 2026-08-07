@@ -85,25 +85,23 @@
     padding: 60px 0 120px;
   }
   .masonry-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    grid-auto-flow: dense;
+    column-count: 3;
+    column-gap: 24px;
   }
   .masonry-item{
     position:relative;
+    margin-bottom: 24px;
+    break-inside: avoid;
     overflow:hidden;
     border-radius:16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
   .masonry-item img{
-    width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;
+    width:100%; height:auto; display:block; transition:transform 0.5s ease;
   }
   .masonry-item:hover img{
-    transform:scale(1.05);
+    transform:scale(1.03);
   }
-  .tall{ grid-row: span 2; }
-  .wide{ grid-column: span 2; }
 
   /* ---------- FOOTER ---------- */
   footer{background:var(--ink);color:#BFB4AB;padding:80px 5vw 40px;}
@@ -123,13 +121,17 @@
   }
 
   /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .masonry-grid{column-count: 2;}
+  }
   @media (max-width: 768px){
     .nav-links, .nav-cta{display:none;}
     .menu-toggle{display:block;}
     .foot-grid{grid-template-columns: 1fr;}
     .foot-bottom{flex-direction:column;gap:16px;text-align:center;}
-    .masonry-grid{grid-template-columns: 1fr;}
-    .wide{ grid-column: span 1; }
+  }
+  @media (max-width: 600px){
+    .masonry-grid{column-count: 1;}
   }
 </style>
 </head>
@@ -167,7 +169,7 @@
   <div class="wrap">
     <div class="masonry-grid">
       <!-- We reuse the existing cloudinary images, organized into a beautiful masonry layout -->
-      <div class="masonry-item tall">
+      <div class="masonry-item">
         <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423086/d3409e1a-5c1b-4d12-a207-88151ee8f755_pk8lnd.jpg" alt="Gallery">
       </div>
       <div class="masonry-item">
@@ -176,10 +178,10 @@
       <div class="masonry-item">
         <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423060/469f1b47-e8d9-4e82-a714-66dbb474f377_l7c9va.jpg" alt="Gallery">
       </div>
-      <div class="masonry-item wide">
+      <div class="masonry-item">
         <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785422131/logo_lujmvp.jpg" alt="Gallery">
       </div>
-      <div class="masonry-item tall">
+      <div class="masonry-item">
         <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785425471/e03c69b4-5b68-4a11-ba4f-7133e5a0638a_so2exy.jpg" alt="Gallery">
       </div>
       <div class="masonry-item">
@@ -188,7 +190,7 @@
       <div class="masonry-item">
         <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423041/f9ead026-b10c-4a3e-b555-a2f2e44ac38f_ytdgxd.jpg" alt="Gallery">
       </div>
-      <div class="masonry-item wide">
+      <div class="masonry-item">
         <img src="https://res.cloudinary.com/ugws99t1/image/upload/v1785423071/549d852c-3677-4e61-b27e-56fbc801115d_zwdjhb.jpg" alt="Gallery">
       </div>
     </div>
